@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+
+
+
+
+
+
+
+
+    <title>myadmin</title>
+</head>
+
+<body>
+
+
+    <!-- Section navbar -->
+    <section>
+        
+       
+           
+    <div class="navbar-fixed">
+        <nav class="blue">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Myadmin</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="index.html">Dashboard</a></li>
+                        <li><a href="index2.html">Posts</a></li>
+                        <li><a href="index3.html">Categories</a></li>
+                        <li><a href="index5.html">Comments</a></li>
+                        <li><a href="index4.html">Users</a></li>
+
+                        <li></li>
+
+
+
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
+        
+    </div>
+ 
+
+   
+
+
+
+</section>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="index2.html">Posts</a></li>
+        <li><a href="index3.html">Categories</a></li>
+        <li><a href="index5.html">Comments</a></li>
+        <li><a href="index4.html">Users</a></li>
+    </ul>
+    </div>
+    <!-- Section navbar -->
+    <section>
+        <div class="containeer">
+            <div class="row">
+                <div class="col s3 center">
+                    <div class="card-panel blue">
+                        <span class="white-text">
+                            <i class="material-icons medium">mood</i>
+                            <h5>Monthly Visitor</h5>
+                            <p>35900</p>
+                            <div class="progress">
+                                <div class="determinate" style="width: 40%"></div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="col s3 center">
+                    <div class="card-panel white">
+                        <span class="dark-text">
+                            <i class="material-icons medium">create</i>
+                            <h5>Blog Post</h5>
+                            <p>207</p>
+                            <div class="progress">
+                                <div class="determinate" style="width: 25%"></div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="col s3 center">
+
+                    <div class="card-panel blue">
+                        <span class="white-text">
+                            <i class="material-icons medium">comment</i>
+                            <h5>Comments</h5>
+                            <p>2300</p>
+                            <div class="progress">
+                                <div class="determinate" style="width: 45%"></div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="col s3 center">
+                    <div class="card-panel white">
+                        <span class="dark-text">
+                            <i class="material-icons medium">supervisor_account</i>
+                            <h5>Users</h5>
+                            <p>410</p>
+                            <div class="progress">
+                                <div class="determinate" style="width: 20%"></div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container-fluid light-blue accent-2">
+            <div class="row">
+                <div class="col s8">
+
+                    <div class="card-panel" style="width: 100%; height: 30%;">
+                        <canvas id="Chart" width="500" height="200"></canvas>
+                        <script>
+
+                            const ctx = document.getElementById('Chart').getContext('2d');
+                            const myChart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                    datasets: [{
+                                        label: '# of Votes',
+                                        data: [12, 19, 3, 5, 2, 3],
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(255, 159, 64, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col s4">
+                    <div class="col s12 m8 offset-m2 l8 offset-l2  ">
+                        <div class="card-panel grey lighten-5 z-depth-1 ">
+                            <div class="card-title">
+                                <h6> <strong>Latest Comments</strong> </h6>
+                            </div>
+                            <div class="row valign-wrapper">
+                                <div class="col s2 ">
+                                    <img src="paco.png" alt="" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s10">
+                                    <span class="black-text">
+                                        This is a square image. Add the "circle" class to it to make it appear circular.
+                                        <p> <span class="green-text"> Aprouve</span>|<span class="red-text"> Deny</span>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row valign-wrapper">
+                                <div class="col s2">
+                                    <img src="ph1jpg.jpg" alt="" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s10">
+                                    <span class="black-text">
+                                        This is a square image. Add the "circle" class to it to make it appear circular.
+                                        <p> <span class="green-text"> Aprouve</span>|<span class="red-text"> Deny</span>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row valign-wrapper">
+                                <div class="col s2">
+                                    <img src="ph2.jpg" alt="" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s10">
+                                    <span class="black-text">
+                                        This is a square image. Add the "circle" class to it to make it appear circular.
+                                        <p> <span class="green-text"> Aprouve</span>|<span class="red-text"> Deny</span>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row valign-wrapper">
+                                <div class="col s2">
+                                    <img src="ph3.jpg" alt="" class="circle responsive-img">
+                                    <!-- notice the "circle" class -->
+                                </div>
+                                <div class="col s10">
+                                    <span class="black-text">
+                                        This is a square image. Add the "circle" class to it to make it appear circular.
+                                        <p> <span class="green-text"> Aprouve</span>|<span class="red-text"> Deny</span>
+                                        </p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="row">
+            <div class="col s10">
+                <table class="card-panel striped">
+                    <thead>
+                        <h4>Recent Posts</h4>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Post One</td>
+                            <td>Web Developement</td>
+                            <td><a class="waves-effect waves-light btn  btn blue">DETAILS</a></td>
+                        </tr>
+                        <tr>
+                            <td>Post Two</td>
+                            <td>Graphic Design</td>
+                            <td><a class="waves-effect waves-light btn blue">DETAILS</a></td>
+                        </tr>
+                        <tr>
+                            <td>Post Three</td>
+                            <td>Web Developement</td>
+                            <td><a class="waves-effect waves-light btn blue">DETAILS</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col s2">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="row">
+                            <h4>Quick Todos</h4>
+                            <div class="input-field col s12">
+                                <input type="text" id="autocomplete-input" class="autocomplete">
+                                <label for="autocomplete-input">Add Todo...</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="collection">
+                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons green-text">close</i></span>Todo One</a>
+                <a href="#!" class="collection-item"><span class="badge"><i class="material-icons green-text">close</i></span>Todo One</a>
+               
+              </div>
+        </div>
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+    <footer class="page-footer white" >
+
+        <div class="footer-copyright blue">
+            <div class="container">
+               <p class="center"> © 2019 Copyright Text</p>
+              
+            </div>
+
+        </div>
+
+
+        <div class="fixed-action-btn">
+            <a class="btn-floating btn-large red">
+                <i class="large material-icons">mode_edit</i>
+            </a>
+            <ul>
+                <li> <a class="waves-effect waves-light btn modal-trigger btn-floating blue" href="#modal1"><i
+                            class="material-icons">edit</i></a></li>
+
+                <li> <a class="waves-effect waves-light btn modal-trigger btn-floating blue" href="#modal2"><i
+                            class="material-icons">folder</i></a></li>
+
+
+                <li> <a class="waves-effect waves-light btn modal-trigger btn-floating blue" href="#modal3"><i
+                            class="material-icons">supervisor_account</i></a></li>
+
+
+            </ul>
+        </div>
+
+
+
+
+        <!-- Modal Structure1 -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4 class="black-text">Add Post</h4>
+                <div id="editor">
+                 
+                </div>
+                <div class="row">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                  <input id="email" type="email" class="validate">
+                                  <label for="email">Title</label>
+                                </div>
+                              </div>
+                            <div class="input-field col s12">
+                                <select>
+                                  <option value="" disabled selected>Select option</option>
+                                  <option value="1">Option 1</option>
+                                  <option value="2">Option 2</option>
+                                  <option value="3">Option 3</option>
+                                </select>
+                                <label>Category</label>
+                              </div>
+                              
+                               
+                                
+                             
+
+
+                        <script>
+                            ClassicEditor
+                                .create(document.querySelector('#editor'))
+                                .catch(error => {
+                                    console.error(error);
+                                });
+                        </script>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="waves-effect waves-light btn blue">Submit</a>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Structure2 -->
+        <div id="modal2" class="modal">
+            <div class="modal-content ">
+                <h4 class="black-text">Add Category</h4>
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email" type="email" class="validate">
+                      <label for="email">Title</label>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+                <a class="waves-effect waves-light btn blue">Submit</a>
+            </div>
+        </div>
+
+        <!-- Modal Structure2 -->
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <h4 class="black-text">Add User</h4>
+                <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s6">
+                          <input  id="first_name" type="text" class="validate">
+                          <label for="first_name">Name</label>
+                        </div>
+                        
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                            <input  id="first_name" type="text" class="validate">
+                            <label for="first_name">Email</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                            <input  id="first_name" type="text" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="password">Confirm password</label>
+                        </div>
+                      </div>
+                      
+                    </form>
+                  </div>
+            </div>
+            <div class="modal-footer">
+                <a class="waves-effect waves-light btn blue">Submit</a>
+            </div>
+        </div>
+    </footer>
+
+   
+         
+    
+         
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+        // Or with jQuery
+
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+        });
+    </script>
+
+    <script>
+        // Or with jQuery
+
+        $(document).ready(function () {
+            $('.modal').modal();
+        });
+    </script>
+
+
+    <script>
+        // Or with jQuery
+
+        $(document).ready(function () {
+            $('input.autocomplete').autocomplete({
+                data: {
+                    "Apple": null,
+                    "Microsoft": null,
+                    "Google": 'https://placehold.it/250x250'
+                },
+            });
+        });
+    </script>
+    <script>
+        // Or with jQuery
+
+        $(document).ready(function () {
+            $('.fixed-action-btn').floatingActionButton();
+        });
+    </script>
+<script>
+    // Or with jQuery
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>
+
+<script>
+    // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+</script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
